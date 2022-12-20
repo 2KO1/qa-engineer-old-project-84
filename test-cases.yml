@@ -1,11 +1,12 @@
 summary: |
-
+Проверка поиска товара по бренду.
 requirement: |
-
+Фильтрация товаров по производителю.
 prerequisites: |
-
+Перейти на страницу веб-приложения hexlet Store по ссылке (https://hexlet-products-store.vercel.app/).
 test-data: |
-
+Brand "Huawei"
 steps:
-
+- Ставим галочку в checkbox "Brand" рядом с "Huawei"
 expected-result: |
+На экране отображен товар Huawei P30
