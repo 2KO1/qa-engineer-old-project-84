@@ -10,3 +10,38 @@ steps:
 - Ставим галочку в checkbox "Brand" рядом с "Huawei"
 expected-result: |
 На экране отображен товар Huawei P30
+Summary: |
+
+requirment: |
+
+prerequisites: |
+
+test-data: |
+
+steps:
+
+expected-result: |
+
+Summary: |
+
+requirment: |
+
+prerequisites: |
+
+test-data: |
+
+steps:
+
+expected-result: |
+
+Summary: |
+
+requirment: |
+
+prerequisites: |
+
+test-data: |
+
+steps:
+
+expected-result: |
