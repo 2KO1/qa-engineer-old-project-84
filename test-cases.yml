@@ -429,28 +429,3 @@ steps:
 expected-result: |
 Контент товара отображен корректно
 товар добавился в корзину
-
-Summary: |
-
-requirment: |
-
-prerequisites: |
-
-test-data: |
-
-steps:
-
-expected-result: |
-
-
-Summary: |
-
-requirment: |
-
-prerequisites: |
-
-test-data: |
-
-steps:
-
-expected-result: |
