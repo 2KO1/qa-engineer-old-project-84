@@ -1,15 +1,4 @@
 summary: |
-    Короткое описание ошибки
-environment: |
-    Ссылка на билд/коммит/версия ПО и всего окружения
-steps-to-reproduce: |
-    Полный перечень шагов для воспроизведения, на каком шаге произошла ошибка
-expected-result: |
-    Какой результат должен был быть без ошибки
-actual-result: |
-    Какой результат получился на самом деле
- 
-summary: |
 Изменение значений ценового диапазона "Цена"/"Price"
 environment: |
 https://hexlet-products-store.vercel.app/ (version 1)
@@ -85,7 +74,6 @@ expected-result: |
 Модальное окно "Order placed successfully" закрывается 
 actual-result: |
 Модальное окно "Order placed successfully" не реагирует на нажатие кнопки "Х"
-
 
 summary: |
 Корзина не сохраняется в сессии браузера
