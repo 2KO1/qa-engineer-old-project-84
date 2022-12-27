@@ -87,7 +87,6 @@ Summary: |
 Попытка заказа товара в количестве больше, чем есть в наличии "Handcraft Chinese style"
 Status: pass
 
-
 Summary: |
 Ввод буквенных символов в числовое поле
 Status: pass
@@ -414,3 +413,119 @@ expected-result: |
 actual-result: |
 Сдвиг числового поля ценового диапазона "Цена"/"Price", при появлении новых товаров входящих в указаный диапазон цены
 
+- summary: |
+При переключении превью невозможен возврат к основному изображению товара "Samsung Galaxy Book"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим в поисковой строке название товара "Samsung Galaxy Book"
+- Нажимаем на ячейку товара "Samsung Galaxy Book"
+- Переключаем дополнительные изображения в виде превью на странице товара
+expected-result: |
+Изображения корректно отображаются в виде превью, при нажатии на дополнительное изображение оно отображается увеличенным
+actual-result: |
+При переключении превью невозможен возврат к основному изображению товара
+
+- summary: |
+Функция фильтрации по производителю в поисковой строке не работает
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим в поисковую строку фирму-производителя товара "apple"
+expected-result: |
+В каталоге товаров отображеня вся продукция производителя "Apple"
+actual-result: |
+Функция фильтрации по производителю в поисковой строке не работает
+отображен каталог товаров
+
+- summary: |
+Функция фильтрации по словам в описании в поисковой строке не работает
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим в поисковую строку слова из описания товара "Super Retina"
+expected-result: |
+В каталоге товаров отображен "iPhone X"
+actual-result: |
+Функция фильтрации по словам в описании в поисковой строке не работает
+отображен каталог товаров
+
+- summary: |
+При выборе категории товара "No category" пропадают кнопки навигации каталога товаров "Next" и "Previous"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на select "Category"
+- В выпадающем списке выбираем категорию "skincare"
+- Нажимаем на select "Category"
+- В выпадающем списке выбираем категорию "No category"
+expected-result: |
+В каталоге отображены товары без фильтрации по категории
+actual-result: |
+При выборе категории "No category" товара пропадают кнопки навигации каталога товаров "Next" и "Previous"
+
+- summary: |
+При вводе запроса в поисковую строку пропадают кнопки навигации каталога товаров "Next" и "Previous"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим "Black Motorbike" в поисковую строку каталога товаров
+- Переключаем страницы товара до нахождения товара через кнопку "Next"
+expected-result: |
+Ячейка товара отображена в каталоге товаров
+actual-result: |
+При вводе названия товара в поисковую строку пропадают кнопки навигации каталога товаров "Next" и "Previous"
+
+- summary: |
+Некорректное отображение изображения в ячейке товара "women winter clothes"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Находим товар "women winter clothes" в каталоге товаров
+expected-result: |
+Корректное отображение контента товара в ячейке товара
+actual-result: |
+Изображение отображено некорректно, в ячейке товара частично обрезано
+
+- summary: |
+При переключении превью товара "women winter clothes" невозможно переключиться на основное изображение
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Находим товар "women winter clothes" в каталоге товаров
+- Нажимаем на ячейку товара
+- Проверяем корректность отображения изображений товара
+- Проверяем работу превью товара
+expected-result: |
+Изображения корректно отображаются в виде превью, при нажатии на дополнительное изображение оно отображается увеличенным
+actual-result: |
+При переключении превью невозможен возврат к основному изображению товара
+
+- summary: |
+Изображение не соответствует 
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Находим товар "women winter clothes" в каталоге товаров
+- Нажимаем на ячейку товара
+- Проверяем корректность отображения изображений товара
+expected-result: |
+Контент товара отображен корректно
+actual-result: |
+некорректное изображение товара, дополнительное изображение мужского костюма на странице товара "women winter clothes" 
