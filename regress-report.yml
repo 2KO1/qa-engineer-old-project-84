@@ -16,12 +16,11 @@ Status: fail
 
 Summary: |
 Переход к товарам одной категории по "тег" на странице товара
-Status: fail
+Status: pass
 
 Summary: |
 Смена языка
 Status: fail
-
 
 Summary: |
 Покупка товара и удаление лишнего товара из корзины
@@ -33,7 +32,7 @@ Status: fail
 
 Summary: |
 Проверка числового поля цены при вводе диапазона от "100" до "0"
-Status: pass
+Status: fail
 
 Summary: |
 Проверка числового поля цены при вводе граничных значений цены товара
@@ -95,9 +94,61 @@ Status: pass
 
 bugreports:
 - summary: |
+Наплыв блока навигации при уменьшении количества отображаемых товаров на странице каталога
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- В select "Category" выбираем "smartphones"
+- В checkbox "Производитель"/"Brand" выбираем "Apple"
+- В числовом поле "Price" выставляем цену товара в поле from "737"
+- В поисковую строку вводим "iphone x"
+expected-result: |
+На экране отображена ячейка товара "iPhone X"
+actual-result: |
+блок навигации при уменьшении количетва товаров в каталоге товаров наплывает на ячейки товаров
+при этом ячейки товаров уменьшаются в размере, создавая скученность отображаемой текстовой информации
+
+- summary: |
+Наплыв блока навигации при уменьшении количества отображаемых товаров на странице каталога
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- В select "Category" выбираем "smartphones"
+- В checkbox "Производитель"/"Brand" выбираем "Apple"
+- В числовом поле "Price" выставляем цену товара в поле from "737"
+- В поисковую строку вводим "iphone x"
+expected-result: |
+На экране отображена ячейка товара "iPhone X"
+actual-result: |
+ячейка товара "iPhone X" отображена некорректно,
+при уменьшении количества товаров на странице каталога, ячейка товара  уменьшается в размере, 
+создавая скученность отображаемой текстовой информации
+
+- summary: |
+Уменьшение зоны клика в ячейке товара
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- В select "Category" выбираем "smartphones"
+- В checkbox "Производитель"/"Brand" выбираем "Apple"
+- В числовом поле "Price" выставляем цену товара в поле from "737"
+- Нажимаем на отображенную ячейку товара "iPhone X"
+expected-result: |
+Отображен товар "iPhone X"
+Вся ячейка товара кликабельна
+actual-result: |
+Зона клика в ячейке товара уменьшена до размера изображения
+
+- summary: |
 Изменение значений ценового диапазона "Цена"/"Price"
 environment: |
-https://hexlet-products-store.vercel.app/ (version 1)
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
 Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
 Версия 108.0.5359.125 (Официальная сборка) (64 бит)
 steps-to-reproduce: |
@@ -108,4 +159,258 @@ expected-result: |
 Значение числового поля ценового диапазона "Цена"/"Price" натуральные числа от 0 до 11190
 actual-result: |
 На каждой странице каталога товаров свой ценовой диапазон "Цена"/"Price" отличный от "от 0 до 11190"
+
+- summary: |
+Некорректное отображение максимума ценового диапазона в числовом поле "To"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажать кнопку "Next" вверху каталога
+- Нажать кнопку "Previous"вверху каталога
+expected-result: |
+Корректное отображение контентка и интерфейса на странице каталога
+Значение числового поля ценового диапазона "Цена"/"Price" натуральные числа от 0 до 11190
+actual-result: |
+В числовом поле "To" в значении "11190" частично перекрывается цифра "0"
+
+
+- summary: |
+В выпадающем списке accordeon "Язык"/"Language" отображена кнопка "Russian"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажать на Accordeon "Language"
+expected-result: |
+В выпадающем списке accordeon "Язык"/"Language" отображены кнопки "Русский" и "English"
+actual-result: |
+В выпадающем списке accordeon "Язык"/"Language" отображена кнопка "Russian"
+
+- summary: |
+Контент не переводится при смене языка на русский
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажать на Accordeon "Language"
+- Нажать на кнопку "Русский"
+expected-result: |
+Каталог товаров отображен на русском языке
+actual-result: |
+Контент товаров отображен на английском языке
+
+- summary: |
+Не работает кнопка "Х" на странице корзины товаров
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- В select "Category" выбираем категорию товаров "home-decoration"
+- Добавляем отображенные товары категории "home-decoration" в корзину нажатием кнопки "Add to cart" в ячейке товара
+- Нажимаем кнопку "Cart"
+- Нажимаем кнопку "Delet" у одного из товаров "Plant Hanger For Home"
+- Нажимаем кнопку "Checkout"
+- Нажимаем кнопку "X"
+expected-result: |
+Модальное окно "Order placed successfully" закрывается
+actual-result: |
+Модальное окно  "Order placed successfully" не реагирует на нажаьтие кнопки "Х"
+
+- summary: |
+Удаление данных корзины из сессии браузера
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- В select "Category" выбираем категорию товаров "home-decoration"
+- Добавляем отображенные товары категории "home-decoration" в корзину нажатием кнопки "Add to cart" в ячейке товара
+- Нажимаем кнопку "Cart"
+- Нажимаем кнопку "Delet" у одного из товаров "Plant Hanger For Home"
+- Нажимаем кнопку "Checkout"
+- Нажимаем кнопку "X"
+- Нажимаем кнопку "Clear cart"
+- Нажимаем кнопку "Store"
+- Обновляем страницу магазина
+- Нажимаем кнопку "Cart"
+expected-result: |
+Отображены "5" выбранных товаров категории "home-decoration"
+actual-result: |
+Отображены "4" выбранных товаров категории "home-decoration", кнопка "Delet" удаляет данные корзины из сессии браузера
+
+- summary: |
+При использовании фильтрации по цене исчезают кнопки навигации "Next" и "Previous"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим в числовое поле "From" значение "0"
+- Вводим в числовое поле "To" значение "100"
+expected-result: |
+Отобразились товары в ценовом диапазоне от "0" до "100"
+actual-result: |
+Изчезают кнопки навигации по каталогу товаров  "Next" и "Previous" вверху и внизу каталогу товаров
+
+
+- summary: |
+Каталог товаров не реагирует на введения диапазона цены от 100 до 0
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим в числовое поле "From" значение "100"
+- Вводим в числовое поле "To" значение "0"
+expected-result: |
+На странице каталога товаров отображена надпись "Nothing found!"
+actual-result: |
+Отображен каталог товаров, фильтрация по цене не осуществлена
+надпись "Nothing found!" отсутствует
+
+- summary: |
+Числовые поля диапазона цены работают некорректно
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим в числовое поле "From" значение "477"
+- Вводим в числовое поле "To" значение "478"
+expected-result: |
+На странице каталога товаров отображен товар "iPhone 9"
+actual-result: |
+Поиск товара не осуществлен
+Отображена страница каталога товаров со всеми товарами
+
+- summary: |
+Числовые поля ценового диапазона не исправляют отрицательные числа
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Вводим в числовое поле "From" значение "-11"
+- Вводим в числовое поле "To" значение "-11190"
+expected-result: |
+Каталог товаров отображает товары в диапазоне цены от 0 до 11190
+Числовые значения в поле "От"/"From" исправилось на "0", в поле "До"/"To" исправилось на "11190"
+actual-result: |
+в числовых полях остались введеные значения "-11" и "-11190"
+отображен каталог товаров со всеми товарами
+
+- summary: |
+Отображение товаров с ценой менее "11190" при заполнении поля "From" значением "11190"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на кнопку "Down"
+- Нажимаем кнопку "Up"
+- Зажимаем кнопку "Up" до значения "100"
+- Зажимаем кнопку "Down" до значения "0"
+- Вводим значение "11190"
+expected-result: |
+В каталоге товаров отображены товары с ценой начинающейся с "11190"
+actual-result: |
+В каталоге товаров отображены товары с ценой менее "11190"
+
+- summary: |
+Фильтрация осуществляется по цене без скидки в числовом поле "From"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на кнопку "Down"
+- Нажимаем кнопку "Up"
+- Зажимаем кнопку "Up" до значения "100"
+expected-result: |
+В процессе изменения значения цены, фильтрация осуществляется по цене со скидкой
+actual-result: |
+В процессе изменения цены числового поля "From", фильтрация осуществляется по цене без скидки
+
+- summary: |
+Сдвиг числового поля ценового диапазона "Цена"/"Price" при зажатии кнопки "Up" числового поля "From"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на кнопку "Down"
+- Нажимаем кнопку "Up"
+- Зажимаем кнопку "Up" до значения "100"
+expected-result: |
+Расположение числового поля остается неизменным
+actual-result: |
+Сдвиг числового поля ценового диапазона "Цена"/"Price", при появлении новых товаров входящих в указаный диапазон цены
+
+- summary: |
+Значения числовго поля "From" выходят за граничные значения
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на кнопку "Down"
+- Нажимаем кнопку "Up"
+- Зажимаем кнопку "Up" до значения "100"
+- Зажимаем кнопку "Down" до значения "0"
+- Вводим значение "11190"
+- Нажимаем на кнопку "Up"
+expected-result: |
+Отображено значение числового поля "From" "11190"
+actual-result: |
+Отображено число "11191"
+Значения числовго поля "From" выходят за граничные значения
+
+- summary: |
+Значения числовго поля "To" выходят за граничные значения, ввод отрицательных чисел
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на кнопку "Down"
+expected-result: |
+Отображено число "0"
+actual-result: |
+Отображено число "-1"
+Значения числовго поля "To" выходят за граничные значения
+
+- summary: |
+Фильтрация осуществляется по цене без скидки в числовом поле "To"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на кнопку "Down"
+- Нажимаем кнопку "Up"
+- Зажимаем кнопку "Up" до значения "100"
+expected-result: |
+В процессе изменения значения цены, фильтрация осуществляется по цене со скидкой
+actual-result: |
+В процессе изменения цены числового поля "To", фильтрация осуществляется по цене без скидки
+
+- summary: |
+Сдвиг числового поля ценового диапазона "Цена"/"Price" при зажатии кнопки "Up" числового поля "To"
+environment: |
+https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+- Нажимаем на кнопку "Down"
+- Нажимаем кнопку "Up"
+- Зажимаем кнопку "Up" до значения "100"
+expected-result: |
+Расположение числового поля остается неизменным
+actual-result: |
+Сдвиг числового поля ценового диапазона "Цена"/"Price", при появлении новых товаров входящих в указаный диапазон цены
 
