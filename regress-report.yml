@@ -236,9 +236,9 @@ bugreports:
      - Нажимаем кнопку "Store"
      - Обновляем страницу магазина
      - Нажимаем кнопку "Cart"
-   expected-result: |
+    expected-result: |
      Отображены "5" выбранных товаров категории "home-decoration"
-   actual-result: |
+    actual-result: |
      Отображены "4" выбранных товаров категории "home-decoration", кнопка "Delet" удаляет данные корзины из сессии браузера
 
   - summary: |
