@@ -1,93 +1,93 @@
-Summary: |
+test0-cases:
+- Summary: |
 Фильтрация товаров по нескольким характеристикам одновременно
 Status: pass
 
-Summary: |
+- Summary: |
 Проверка поиска по категории, производителю, цене, названию и оформление заказа
 Status: pass
 
-Summary: |
+- Summary: |
 Добавление товара в корзину и возврат в каталог
 Status: pass
 
-Summary: |
+- Summary: |
 Просмотр каталога товаров спомощью кнопок "Следующая"/"Next" и "Предудыщая"/"Previous"
 Status: fail
 
-Summary: |
+- Summary: |
 Переход к товарам одной категории по "тег" на странице товара
 Status: pass
 
-Summary: |
+- Summary: |
 Смена языка
 Status: fail
 
-Summary: |
+- Summary: |
 Покупка товара и удаление лишнего товара из корзины
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка числового поля цены при вводе значения от "0" до "100"
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка числового поля цены при вводе диапазона от "100" до "0"
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка числового поля цены при вводе граничных значений цены товара
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка числового поля цены при вводе диапазона от "0" до "11190"
 Status: pass
 
-Summary: |
+- Summary: |
 Проверка числового поля цены при вводе диапазона от "0" до "11191"
 Status: pass
 
-Summary: |
+- Summary: |
 Проверка числового поля цены при вводе диапазона от "-11" до "-11190"
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка "Up-Down" переключателя числового поля "From"
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка "Up-Down" переключателя числового поля "To"
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка переключения изображений превью на странице товара
 Status: fail
 
-Summary: |
+- Summary: |
 Поиск товара по производителю через поисковую строку
 Status: fail
 
-Summary: |
+- Summary: |
 Поиск товара по описанию через поисковую строку
 Status: fail
 
-Summary: |
+- Summary: |
 Отключение фильтрации по категориям товара
 Status: fail
 
-
-Summary: |
+- Summary: |
 Проверка контента в ячейке товара и переход на страницу товара "Black Motorbike"
 Status: fail
 
-Summary: |
+- Summary: |
 Проверка контента на странице товара "women winter clothes"
 Status: fail
 
-Summary: |
+- Summary: |
 Попытка заказа товара в количестве больше, чем есть в наличии "Handcraft Chinese style"
 Status: pass
 
-Summary: |
+- Summary: |
 Ввод буквенных символов в числовое поле
 Status: pass
 
