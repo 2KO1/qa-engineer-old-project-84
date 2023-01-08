@@ -97,7 +97,7 @@
     Нажатие кнопки "Магазин"/"Store" пользователь возвращается на веб-страницу каталога товаров. 7
   prerequisites: |
     Перейти на страницу веб-приложения "hexlet Store" по ссылке (https://hexlet-products-store.vercel.app/)
-    Перейти на веб-страницу корзины по ссылке(https://hexlet-products-store.vercel.app/cart)
+    Перейти на веб-страницу корзины
   test-data: |
     -
   steps:
