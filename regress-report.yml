@@ -328,6 +328,21 @@ bugreports:
 
 
   - summary: |
+      При вводе запроса в поисковую строку пропадают кнопки навигации каталога товаров "Next" и "Previous" (23)
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
+      Windows 10 Pro Версия 21H2 (сборка ОС 19044.2364)
+      Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+    steps-to-reproduce: |
+      - Вводим в поисковую строку фирму-производителя товара "apple"
+    expected-result: |
+      В каталоге товаров отображения вся продукция производителя "Apple"
+    actual-result: |
+      При вводе первого символа "a" в поисковую строку пропадают кнопки навигации каталога товаров "Next" и "Previous"
+
+
+
+  - summary: |
       Функция фильтрации по производителю в поисковой строке не работает (23)
     environment: |
       https://products-store-git-v2bugfixes-hexlet-components.vercel.app/ (version 2)
